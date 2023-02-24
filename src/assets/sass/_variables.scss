@@ -1,0 +1,52 @@
+$primary:  hsl(220, 98%, 61%);
+$linear_gradient: linear-gradient hsl(192, 100%, 67%) to hsl(280, 87%, 65%);
+
+//light theme
+$Very_Light_Gray: hsl(0, 0%, 98%);
+$Very_Light_Grayish_Blue: hsl(236, 33%, 92%);
+$Light_Grayish_Blue: hsl(233, 11%, 84%);
+$Dark_Grayish_Blue: hsl(236, 9%, 61%);
+$Very_Dark_Grayish_Blue: hsl(235, 19%, 35%);
+
+//dark theme
+$Very_Dark_Blue: hsl(235, 21%, 11%);
+$Very_Dark_Desaturated_Blue: hsl(235, 24%, 19%);
+$Light_Grayish_Blue: hsl(234, 39%, 85%);
+$Light_Grayish_Blue_hover: hsl(236, 33%, 92%);
+$Dark_Grayish_Blue: hsl(234, 11%, 52%);
+$Very_Dark_Grayish_Blue: hsl(233, 14%, 35%);
+$Very_Dark_Grayish_Blue: hsl(237, 14%, 26%);
+
+
+//font
+@font-face {
+	font-family: "josefin-regular";
+	src: url(../fonts/JosefinSans-Regular.ttf);
+}
+
+@font-face {
+	font-family: "josefin-medium";
+	src: url(../fonts//JosefinSans-Medium.ttf);
+}
+
+@font-face {
+	font-family: "josefin-light";
+	src: url(../fonts//JosefinSans-Light.ttf);
+}
+
+$primary_font: "josefin-regular";
+$bolder_font: "josefin-medium";
+$light_font: "josefin-light";
+
+@mixin breakpoint($point) {
+	@if $point == md {
+		@media (max-width: 65em) {
+			@content;
+		}
+	}
+	@if $point == sm {
+		@media (max-width: 550px) {
+			@content;
+		}
+	}
+}

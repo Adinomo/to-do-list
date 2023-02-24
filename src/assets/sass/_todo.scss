@@ -1,0 +1,83 @@
+@import './variables';
+
+:root{
+	--list_backColor: white;
+	--list_borderColor: hsl(234, 39%, 85%);
+	--check_hoverBack: white;
+	--check_borderColor: hsl(234, 39%, 85%);
+	--list_color: hsl(237, 14%, 26%);
+}
+
+[data-theme="dark"]{
+	--list_backColor: hsl(235, 24%, 19%);
+	--list_borderColor: hsl(233, 14%, 35%);
+	--check_hoverBack: hsl(235, 24%, 19%);
+	--check_borderColor: hsl(234, 11%, 52%);
+	--list_color: hsl(234, 39%, 85%);
+}
+
+.todo{
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	height: 53px;
+	padding: 1rem 0.75rem;
+	background: var(--list_backColor);
+	border-bottom: 1px solid var(--list_borderColor);
+
+	&_checkbox{
+		display: none;
+	}
+
+	&_check{
+		width: 20px;
+		height: 20px;
+		border-radius: 50%;
+		border: 1px solid var(--check_borderColor);
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		transition: 0.5s ease-in-out;
+		//background: linear-gradient(to bottom right, hsl(192, 100%, 67%), hsl(280, 87%, 65%));
+		&:hover{
+			background: linear-gradient(var(--check_hoverBack), var(--check_hoverBack)) padding-box,
+			            linear-gradient(to bottom right, hsl(192, 100%, 67%), hsl(280, 87%, 65%)) border-box;
+			border: 1px solid transparent;
+			border-radius: 50%;
+			cursor: pointer;
+		}
+	}
+
+	p{
+		color: var(--list_color);
+		font-weight: 400;
+		font-size: 20px;
+		margin-right: auto;
+		margin-left: 25px;
+	}
+
+	img{
+		display: none;
+		transition: 0.5s ease-in-out;
+	}
+	&:hover{
+		cursor: pointer;
+		.img_cross{
+			display: block;
+			transition: 0.5s ease-in-out;
+			&:hover{
+				opacity: 0.6;
+			}
+		}
+		.todo_check{
+			background: linear-gradient(var(--check_hoverBack), var(--check_hoverBack)) padding-box,
+			            linear-gradient(to bottom right, hsl(192, 100%, 67%), hsl(280, 87%, 65%)) border-box;
+			border: 1px solid transparent;
+			border-radius: 50%;
+			cursor: pointer;
+		}
+
+		
+	}
+}
