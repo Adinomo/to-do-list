@@ -5,6 +5,7 @@
 	--list_borderColor: hsl(234, 39%, 85%);
 	--text_color: hsl(237, 14%, 26%);
 	--placeholder: hsl(234, 11%, 52%);
+	--btn_backColor:hsl(234, 39%,85%);
 }
 
 [data-theme="dark"]{
@@ -12,12 +13,14 @@
 	--list_borderColor: hsl(233, 14%, 35%);
 	--text_color: hsl(234, 39%, 85%);
 	--placeholder: hsla(234, 11%, 52%, 0.8);
+	--btn_backColor:hsl(234, 11%, 52%);
 }
 
 .form{
 	&_layout{
 		margin-top: 30px;
 		width: 100%;
+		position: relative;
 	}
 	&_text{
 		width: 100%;
@@ -32,6 +35,25 @@
 		padding: 1rem 0.75rem;
 		&::placeholder{
 			color: var(--placeholder);
+		}
+	}
+	&_btn{
+		position: absolute;
+		right: 10px;
+		top: 8px;
+		height: 40px;
+		width: 40px;
+		border-radius: 50%;
+		border: none;
+		font-size: 40px;
+		font-weight: 300;
+		transition: all 0.3s ease-in-out;
+		color: var(--list_backColor);
+		outline: none;
+		background: linear-gradient(to bottom right, hsl(192, 100%, 67%), hsl(280, 87%, 65%));
+		&:hover{
+			opacity: 0.8;
+			cursor: pointer;
 		}
 	}
 }

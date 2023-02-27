@@ -26,8 +26,13 @@
 	background: var(--list_backColor);
 	border-bottom: 1px solid var(--list_borderColor);
 
+	.check_success{
+		background: linear-gradient(to bottom right, hsl(192, 100%, 67%), hsl(280, 87%, 65%));
+	}
+
 	&_checkbox{
 		display: none;
+		
 	}
 
 	&_check{
@@ -40,10 +45,9 @@
 		justify-content: center;
 		transition: 0.5s ease-in-out;
 		//background: linear-gradient(to bottom right, hsl(192, 100%, 67%), hsl(280, 87%, 65%));
+		
 		&:hover{
-			background: linear-gradient(var(--check_hoverBack), var(--check_hoverBack)) padding-box,
-			            linear-gradient(to bottom right, hsl(192, 100%, 67%), hsl(280, 87%, 65%)) border-box;
-			border: 1px solid transparent;
+			border-color: hsl(280, 87%, 65%);
 			border-radius: 50%;
 			cursor: pointer;
 		}
@@ -57,10 +61,11 @@
 		margin-left: 25px;
 	}
 
-	img{
+	.img_cross{
 		display: none;
 		transition: 0.5s ease-in-out;
 	}
+
 	&:hover{
 		cursor: pointer;
 		.img_cross{
@@ -70,14 +75,5 @@
 				opacity: 0.6;
 			}
 		}
-		.todo_check{
-			background: linear-gradient(var(--check_hoverBack), var(--check_hoverBack)) padding-box,
-			            linear-gradient(to bottom right, hsl(192, 100%, 67%), hsl(280, 87%, 65%)) border-box;
-			border: 1px solid transparent;
-			border-radius: 50%;
-			cursor: pointer;
-		}
-
-		
 	}
 }

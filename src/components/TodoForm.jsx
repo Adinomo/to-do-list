@@ -4,10 +4,19 @@ import { addTodo } from '../redux/todoSlice';
 import '../assets/sass/_form.scss';
 
 function TodoForm() {
-	const [value, setValue] = useState('')
+	const [value, setValue] = useState('');
+
 	const dispatch = useDispatch();
+
+	const onSubmit = (event) => {
+		event.preventDefault();
+		dispatch(addTodo({
+			title: value,
+		}));
+	}
+
 	return (
-		<div className="form">
+		<div className="form" onSubmit={onSubmit}>
 			<form className='form_layout'>
 				<input
 					type="text"
@@ -17,6 +26,7 @@ function TodoForm() {
 					onChange={(event) => setValue(event.target.value)}>
 
 				</input>
+				<button type='submit' className='form_btn'>+</button>
 			</form>
 		</div>
 	);
