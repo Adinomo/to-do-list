@@ -35,43 +35,7 @@ function App() {
 		dispatch(deleteCompleted());
 	};
 
-	const renderTodoList = () => {
-		switch (filters) {
-			case "all":
-				todos.map((todo) => 
-               <TodoItem
-						id={todo.id}
-						title={todo.title}
-						completed={todo.completed}
-					/>
-				);
-				break;
-			case "active":
-				todos
-					.filter((todo) => todo.completed !== true)
-					.map((todo) => 
-						<TodoItem
-							id={todo.id}
-							title={todo.title}
-							completed={todo.completed}
-						/>
-					);
-				break;
-			case "completed":
-				todos
-					.filter((todo) => todo.completed === true)
-					.map((todo) => 
-						<TodoItem
-							id={todo.id}
-							title={todo.title}
-							completed={todo.completed}
-						/>
-					);
-		}
-	};
-	console.log(
-		todos.filter((todo) => todo.completed === false).map((todo) => todo.id),
-	);
+	
 
 	return (
 		<div className="app">
