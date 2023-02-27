@@ -98,10 +98,22 @@ function App() {
 				</div>
 				<div className="app_info">
 					<p>{itemsLeft.length} items left</p>
-					<div >
-						<p>All</p>
-						<p>Active</p>
-						<p>Completed</p>
+					<div>
+						<p
+							className={filters === "all" && "active_filter"}
+							onClick={() => setFilters("all")}>
+							All
+						</p>
+						<p
+							className={filters === "active" && "active_filter"}
+							onClick={() => setFilters("active")}>
+							Active
+						</p>
+						<p
+							className={filters === "completed" && "active_filter"}
+							onClick={() => setFilters("completed")}>
+							Completed
+						</p>
 					</div>
 					<p onClick={clearCompleted}>Clear Completed</p>
 				</div>

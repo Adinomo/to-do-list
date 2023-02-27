@@ -88,6 +88,9 @@
 			width: 180px;
 			display: flex;
 			justify-content: space-between;
+			.active_filter{
+				color: $primary;
+			}
 		}
 		p{
 			&:hover{
