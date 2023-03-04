@@ -35,8 +35,6 @@ function App() {
 		dispatch(deleteCompleted());
 	};
 
-	
-
 	return (
 		<div className="app">
 			<div className="app_container">
@@ -52,13 +50,43 @@ function App() {
 				</div>
 				<TodoForm />
 				<div className="app_status">
-					{todos.map((todo) => (
-						<TodoItem
-							id={todo.id}
-							title={todo.title}
-							completed={todo.completed}
-						/>
-					))}
+					{todos.length > 0 && filters === "all"
+						? todos.map((todo) => {
+								return (
+									<TodoItem
+										id={todo.id}
+										title={todo.title}
+										completed={todo.completed}
+									/>
+								);
+						  })
+						: null}
+					{todos.length > 0 && filters === "active"
+						? todos.map((todo) => {
+								return (
+									todo.completed === false && (
+										<TodoItem
+											id={todo.id}
+											title={todo.title}
+											completed={todo.completed}
+										/>
+									)
+								);
+						  })
+						: null}
+					{todos.length > 0 && filters === "completed"
+						? todos.map((todo) => {
+								return (
+									todo.completed === true && (
+										<TodoItem
+											id={todo.id}
+											title={todo.title}
+											completed={todo.completed}
+										/>
+									)
+								);
+						  })
+						: null}
 				</div>
 				<div className="app_info">
 					<p>{itemsLeft.length} items left</p>
